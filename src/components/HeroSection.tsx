@@ -8,7 +8,7 @@ const HeroSection = () => {
     <section className="relative min-h-[90vh] flex items-center section-dark pt-20">
       <div className="absolute inset-0">
         <img src={heroImg} alt="Custom stamped concrete driveway by Arechiga's Concrete" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/50 shadow-none" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       <div ref={ref} className={`container mx-auto px-4 lg:px-8 relative z-10 scroll-hidden ${isVisible ? "scroll-visible" : ""}`}>
