@@ -1,4 +1,4 @@
-import { Sparkles, Grid3X3, HardHat, Fence, Brick, Droplets } from "lucide-react";
+import { Sparkles, Grid3X3, HardHat, Fence, Blocks, Droplets } from "lucide-react";
 import prestigeImg from "@/assets/prestige-concrete.jpg";
 import paversImg from "@/assets/pavers.jpg";
 import standardImg from "@/assets/standard-concrete.jpg";
