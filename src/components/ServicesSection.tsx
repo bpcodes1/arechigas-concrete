@@ -29,7 +29,7 @@ const services = [
     body: "Redoing the backyard? Noel does fencing too. Most clients find this out mid-project and save themselves from coordinating a second contractor.",
   },
   {
-    icon: Brick,
+    icon: Blocks,
     headline: "Retaining Walls and Block Work Built to Last.",
     body: "Retaining walls, block walls, brick, and stone features. Structural hardscape that holds up to Willamette Valley weather and soil conditions.",
   },
