@@ -1,18 +1,35 @@
 
 
-## Change Primary Color to #0C3C01
+## Dark Forest Theme
 
-**What:** Update the primary dark green color from the current `hsl(120, 100%, 20%)` (~`#006600`) to `#0C3C01` (a deeper, darker green) across the site.
+Transform the site from a white/light background to a deep, dark forest aesthetic while keeping all text readable and the lime accent punchy.
 
-**Color conversion:** `#0C3C01` → RGB(12, 60, 1) → approximately `HSL(129, 97%, 12%)`
+### Color Changes (all in `src/index.css`)
 
-**Files to edit:**
+| Token | Current | New | Purpose |
+|-------|---------|-----|---------|
+| `--background` | `0 0% 100%` (white) | `129 30% 8%` (deep forest) | Page background |
+| `--foreground` | `129 97% 5%` | `90 20% 90%` (light green-grey) | Body text |
+| `--card` | `0 0% 100%` (white) | `129 25% 12%` (dark moss) | Card surfaces |
+| `--card-foreground` | `129 97% 5%` | `90 20% 90%` | Card text |
+| `--popover` | `0 0% 100%` | `129 25% 12%` | Popover surfaces |
+| `--popover-foreground` | `129 97% 5%` | `90 20% 90%` | Popover text |
+| `--muted` | `129 10% 95%` (near-white) | `129 20% 14%` (slightly lighter forest) | Process/FAQ section bg |
+| `--muted-foreground` | `129 10% 40%` | `129 15% 55%` | Secondary text — lighter for readability |
+| `--border` | `129 20% 85%` | `129 20% 20%` | Subtle dark borders |
+| `--input` | `129 20% 85%` | `129 20% 20%` | Input borders |
+| `--accent-foreground` | `129 97% 10%` | `129 97% 5%` | Keep dark on lime buttons |
 
-1. **`src/index.css`** — Update the `--primary` CSS variable from `120 100% 20%` to `129 97% 12%`. Also update the hero gradient stops to use the new primary as the base (e.g., `hsl(129, 97%, 9%)` to `hsl(129, 97%, 15%)`).
+Primary, secondary, accent (lime), ring, hero gradient, and CTA glow stay the same — they already work on dark backgrounds.
 
-2. **`src/index.css`** — Update `--secondary` to a slightly lighter shade of the new primary (e.g., `129 97% 16%`) so it stays harmonious.
+### Component adjustments
 
-3. **`src/index.css`** — Update `--foreground`, `--ring`, and border/muted variables that reference the green hue to use `129` instead of `120` for consistency.
+- **TrustBar** (`bg-background border-b border-border`): Automatically picks up the new dark background — no code change needed.
+- **ServicesSection, TestimonialsSection** (`bg-background`): Same — automatic.
+- **ProcessSection, FAQSection** (`bg-muted`): Will use the new slightly-lighter forest green — automatic.
+- **Navbar, Hero, FinalCTA, Footer** (`.section-dark`): Already dark — no change.
 
-This will automatically propagate to all components (navbar, hero, service cards, CTA sections, footer) since they reference the CSS variables via Tailwind's `primary`, `secondary`, and utility classes like `.section-dark`.
+### Summary
+
+Only **one file changes**: `src/index.css`. All components already reference CSS variables via Tailwind, so the dark forest feel propagates everywhere automatically.
 
