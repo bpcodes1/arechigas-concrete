@@ -13,7 +13,7 @@ const HeroSection = () => {
 
       <div ref={ref} className={`container mx-auto px-4 lg:px-8 relative z-10 scroll-hidden ${isVisible ? "scroll-visible" : ""}`}>
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] text-primary-foreground mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] text-primary-foreground mb-6">
             Your Driveway Should Look Like Something You Chose
             <span className="text-accent"> — Not Something That Just Happened.</span>
           </h1>
@@ -21,7 +21,7 @@ const HeroSection = () => {
             Arechiga's Concrete builds custom driveways, patios, and Prestige finishes for Salem homeowners who want more than poured gray concrete. Noel personally quotes every job and runs every crew.
           </p>
           <div className={`flex flex-col sm:flex-row items-start gap-4 scroll-hidden delay-2 ${isVisible ? "scroll-visible" : ""}`}>
-            <a href="#contact" className="cta-lime px-8 py-4 rounded-md text-lg font-bold transition-all hover:scale-105 inline-block">
+            <a href="#contact" className="cta-lime px-8 py-4 rounded-md text-lg font-bold transition-all hover:scale-105 active:scale-95 inline-block">
               Get Your Free On-Site Quote
             </a>
           </div>
