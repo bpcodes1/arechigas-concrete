@@ -13,7 +13,7 @@ const MobileCTA = () => {
 
   return (
     <div className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-transform duration-300 ${visible ? "translate-y-0" : "translate-y-full"}`}>
-      <div className="grid grid-cols-2 border-t border-primary-foreground/10 shadow-lg" style={{ background: "hsl(129, 97%, 10%)" }}>
+      <div className="grid grid-cols-2 border-t border-primary-foreground/10 shadow-lg" style={{ background: "hsl(145, 55%, 10%)" }}>
         <a
           href="tel:9712393684"
           className="flex items-center justify-center gap-2 py-4 text-sm font-bold text-primary-foreground border-r border-primary-foreground/10 active:bg-primary-foreground/10 transition-colors"
@@ -24,7 +24,7 @@ const MobileCTA = () => {
         <a
           href="#contact"
           className="flex items-center justify-center gap-2 py-4 text-sm font-bold active:opacity-80 transition-opacity"
-          style={{ background: "hsl(90, 100%, 50%)", color: "hsl(129, 97%, 10%)" }}
+          style={{ background: "hsl(78, 80%, 50%)", color: "hsl(145, 55%, 8%)" }}
         >
           <FileText className="w-4 h-4" />
           Get a Quote

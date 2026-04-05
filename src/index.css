@@ -6,38 +6,38 @@
 
 @layer base {
   :root {
-    --background: 129 30% 8%;
-    --foreground: 90 20% 90%;
+    --background: 215 15% 8%;
+    --foreground: 210 20% 92%;
 
-    --card: 129 25% 12%;
-    --card-foreground: 90 20% 90%;
+    --card: 215 12% 12%;
+    --card-foreground: 210 20% 92%;
 
-    --popover: 129 25% 12%;
-    --popover-foreground: 90 20% 90%;
+    --popover: 215 12% 12%;
+    --popover-foreground: 210 20% 92%;
 
-    --primary: 129 97% 12%;
+    --primary: 145 55% 22%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 129 97% 16%;
+    --secondary: 145 45% 28%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 129 20% 14%;
-    --muted-foreground: 129 15% 55%;
+    --muted: 215 10% 16%;
+    --muted-foreground: 215 12% 52%;
 
-    --accent: 90 100% 50%;
-    --accent-foreground: 129 97% 5%;
+    --accent: 78 80% 50%;
+    --accent-foreground: 145 55% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 129 20% 20%;
-    --input: 129 20% 20%;
-    --ring: 129 97% 12%;
+    --border: 215 12% 22%;
+    --input: 215 12% 22%;
+    --ring: 145 55% 22%;
 
     --radius: 0.5rem;
 
-    --hero-gradient: linear-gradient(135deg, hsl(129, 97%, 9%) 0%, hsl(129, 97%, 15%) 100%);
-    --cta-glow: 0 0 20px hsla(90, 100%, 50%, 0.3);
+    --hero-gradient: linear-gradient(135deg, hsl(145, 55%, 10%) 0%, hsl(145, 50%, 17%) 100%);
+    --cta-glow: 0 0 24px hsla(78, 80%, 50%, 0.35);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -73,13 +73,13 @@
   }
 
   .cta-lime {
-    background-color: hsl(90, 100%, 50%);
-    color: hsl(129, 97%, 10%);
+    background-color: hsl(78, 80%, 50%);
+    color: hsl(145, 55%, 8%);
     @apply font-bold;
   }
 
   .cta-lime:hover {
-    background-color: hsl(90, 100%, 45%);
+    background-color: hsl(78, 80%, 44%);
     box-shadow: var(--cta-glow);
   }
 
