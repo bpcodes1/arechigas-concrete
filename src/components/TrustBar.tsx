@@ -14,7 +14,7 @@ const items = [
 const marqueeItems = [...items, ...items];
 
 const TrustBar = () => (
-  <div className="bg-background border-b border-border overflow-hidden py-3">
+  <div className="bg-secondary border-y border-border overflow-hidden py-3">
     <div className="flex w-max animate-marquee">
       {marqueeItems.map((item, i) => (
         <div key={i} className="flex items-center gap-2 px-8 text-sm font-medium text-foreground/75 whitespace-nowrap">

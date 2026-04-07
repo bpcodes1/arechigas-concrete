@@ -29,7 +29,7 @@ const TestimonialsSection = () => {
 
         <div ref={header.ref} className={`text-center max-w-2xl mx-auto mb-16 scroll-hidden ${header.isVisible ? "scroll-visible" : ""}`}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-4">86+ Reviews. Every One of Them 5 Stars.</h2>
-          <p className="text-lg text-muted-foreground">Don't take our word for it — these are Salem homeowners who hired Noel and came back with their neighbors.</p>
+          <p className="text-lg text-muted-foreground italic">Don't take our word for it — these are Salem homeowners who hired Noel and came back with their neighbors.</p>
         </div>
 
         <div ref={body.ref} className={`scroll-hidden ${body.isVisible ? "scroll-visible" : ""}`}>
@@ -41,9 +41,9 @@ const TestimonialsSection = () => {
             <CarouselContent className="-ml-4">
               {testimonials.map((t) => (
                 <CarouselItem key={t.name} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="rounded-xl border border-border bg-card p-6 flex flex-col h-full">
+                  <div className="rounded-xl border border-border bg-card shadow-sm p-6 flex flex-col h-full">
                     <Stars />
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">"{t.quote}"</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1 italic">"{t.quote}"</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {t.tags.map((tag) => (
                         <span key={tag} className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary">{tag}</span>

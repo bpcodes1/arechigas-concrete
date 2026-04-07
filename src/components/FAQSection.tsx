@@ -25,9 +25,9 @@ const FAQSection = () => {
         <div ref={content.ref}>
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className={`bg-card rounded-xl border border-border px-6 scroll-hidden delay-${Math.min(i + 1, 5)} ${content.isVisible ? "scroll-visible" : ""}`}>
+              <AccordionItem key={i} value={`faq-${i}`} className={`bg-card rounded-xl border border-border shadow-sm px-6 scroll-hidden delay-${Math.min(i + 1, 5)} ${content.isVisible ? "scroll-visible" : ""}`}>
                 <AccordionTrigger className="text-left font-bold text-foreground hover:no-underline">{faq.q}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">{faq.a}</AccordionContent>
+                <AccordionContent className="text-muted-foreground leading-relaxed italic">{faq.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

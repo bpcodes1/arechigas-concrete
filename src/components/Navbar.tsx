@@ -13,10 +13,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 section-dark border-b border-primary/20">
-      <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
-        <a href="#" className="text-base sm:text-xl font-black tracking-tight text-primary-foreground flex items-baseline gap-0.5">
-          <span className="font-blackletter text-2xl sm:text-3xl text-primary leading-none">A</span>rechiga's
-          <span className="font-blackletter text-2xl sm:text-3xl text-primary leading-none ml-1.5">C</span>oncrete
+      <div className="container mx-auto flex items-center justify-between py-2 px-4 lg:px-8">
+        <a href="#">
+          <img src="/logo.PNG" alt="Arechiga's Concrete" className="h-12 w-auto bg-white px-2 py-1 rounded" />
         </a>
 
         {/* Desktop */}

@@ -18,7 +18,7 @@ const ProcessSection = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div ref={header.ref} className={`text-center max-w-2xl mx-auto mb-16 scroll-hidden ${header.isVisible ? "scroll-visible" : ""}`}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-4">How It Works — From First Call to Final Cleanup</h2>
-          <p className="text-lg text-muted-foreground">No surprises. No going quiet. Noel runs the job from the quote through the last broom pass.</p>
+          <p className="text-lg text-muted-foreground italic">No surprises. No going quiet. Noel runs the job from the quote through the last broom pass.</p>
         </div>
 
         <div ref={timeline.ref} className="max-w-3xl mx-auto space-y-0">
@@ -30,7 +30,7 @@ const ProcessSection = () => {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-foreground mb-1">Step {i + 1}: {step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{step.body}</p>
+                <p className="text-muted-foreground leading-relaxed italic">{step.body}</p>
               </div>
             </div>
           ))}

@@ -23,7 +23,7 @@ const MobileCTA = () => {
         <a
           href="#contact"
           className="flex items-center justify-center gap-2 py-4 text-sm font-bold text-white active:opacity-80 transition-opacity"
-          style={{ background: "hsl(0, 70%, 48%)" }}
+          style={{ background: "hsl(0, 49%, 11%)" }}
         >
           <FileText className="w-4 h-4" />
           Get a Quote

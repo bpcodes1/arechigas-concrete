@@ -47,7 +47,7 @@ const StatsSection = () => {
   const { ref, isVisible } = useScrollReveal(0.3);
 
   return (
-    <section className="py-16 bg-background border-b border-border">
+    <section className="py-16 bg-secondary border-y border-border">
       <div ref={ref} className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           {stats.map((s, i) => (
