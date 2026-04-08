@@ -1,19 +1,20 @@
 import { Grid3X3, HardHat, Fence, Blocks, Droplets } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { pub } from "@/lib/publicUrl";
 
 const featuredService = {
   label: "Premium",
   headline: "Concrete That Looks Like It Was Designed — Because It Was.",
   body: "Prestige concrete isn't just poured and finished — it's planned. Stamped patterns, custom textures, colored finishes, exposed aggregate. Noel does custom design work other Salem crews won't attempt. If you've seen a driveway or patio that made you stop and look twice, this is what you were looking at.",
-  image: "/concrete.webp",
+  image: pub("/concrete.webp"),
 };
 
 const services = [
-  { icon: Grid3X3, headline: "Exclusive Paver Designs. Not the Pattern Everyone Else Lays.", body: "Noel installs geo mesh beneath every paver project — a weed-blocking layer most crews skip. The result holds longer and keeps looking clean years after installation.", image: "/concrete2.webp" },
-  { icon: HardHat, headline: "Functional Concrete Done with Craftsmanship.", body: "Driveways, slabs, RV pads, sidewalks, steps. Properly graded for runoff. Expansion joints placed right. Straight lines and a clean finish.", image: "/concrete3.webp" },
-  { icon: Fence, headline: "Stay With One Contractor.", body: "Redoing the backyard? Noel does fencing too. Most clients find this out mid-project and save themselves from coordinating a second contractor.", image: "/concrete4.webp" },
-  { icon: Blocks, headline: "Retaining Walls and Block Work Built to Last.", body: "Retaining walls, block walls, brick, and stone features. Structural hardscape that holds up to Willamette Valley weather and soil conditions.", image: "/concrete5.webp" },
-  { icon: Droplets, headline: "Where the Water Goes Matters.", body: "Gutter installation, drain lines, and stormwater drainage planned alongside every driveway or patio project.", image: "/concrete6.webp" },
+  { icon: Grid3X3, headline: "Exclusive Paver Designs. Not the Pattern Everyone Else Lays.", body: "Noel installs geo mesh beneath every paver project — a weed-blocking layer most crews skip. The result holds longer and keeps looking clean years after installation.", image: pub("/concrete2.webp") },
+  { icon: HardHat, headline: "Functional Concrete Done with Craftsmanship.", body: "Driveways, slabs, RV pads, sidewalks, steps. Properly graded for runoff. Expansion joints placed right. Straight lines and a clean finish.", image: pub("/concrete3.webp") },
+  { icon: Fence, headline: "Stay With One Contractor.", body: "Redoing the backyard? Noel does fencing too. Most clients find this out mid-project and save themselves from coordinating a second contractor.", image: pub("/concrete4.webp") },
+  { icon: Blocks, headline: "Retaining Walls and Block Work Built to Last.", body: "Retaining walls, block walls, brick, and stone features. Structural hardscape that holds up to Willamette Valley weather and soil conditions.", image: pub("/concrete5.webp") },
+  { icon: Droplets, headline: "Where the Water Goes Matters.", body: "Gutter installation, drain lines, and stormwater drainage planned alongside every driveway or patio project.", image: pub("/concrete6.webp") },
 ];
 
 const ServicesSection = () => {

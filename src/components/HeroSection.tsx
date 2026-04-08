@@ -1,5 +1,6 @@
 import { Phone, ArrowRight } from "lucide-react";
-const heroImg = "/hero3.webp";
+import { pub } from "@/lib/publicUrl";
+const heroImg = pub("/hero3.webp");
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const heroServices = [

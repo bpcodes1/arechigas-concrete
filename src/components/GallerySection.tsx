@@ -1,15 +1,16 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { pub } from "@/lib/publicUrl";
 
 const galleryImages = [
-  { src: "/concrete7.webp", alt: "Concrete work by Arechiga's" },
-  { src: "/concrete8.webp", alt: "Concrete patio installation" },
-  { src: "/concrete9.webp", alt: "Concrete driveway project" },
-  { src: "/concrete10.webp", alt: "Stamped concrete finish" },
-  { src: "/concrete11.webp", alt: "Concrete slab pour" },
-  { src: "/concrete12.webp", alt: "Retaining wall installation" },
-  { src: "/concrete13.webp", alt: "Finished concrete walkway" },
-  { src: "/concrete14.webp", alt: "Concrete steps and edging" },
-  { src: "/trucks.webp", alt: "Arechiga's Concrete crew and trucks" },
+  { src: pub("/concrete7.webp"), alt: "Concrete work by Arechiga's" },
+  { src: pub("/concrete8.webp"), alt: "Concrete patio installation" },
+  { src: pub("/concrete9.webp"), alt: "Concrete driveway project" },
+  { src: pub("/concrete10.webp"), alt: "Stamped concrete finish" },
+  { src: pub("/concrete11.webp"), alt: "Concrete slab pour" },
+  { src: pub("/concrete12.webp"), alt: "Retaining wall installation" },
+  { src: pub("/concrete13.webp"), alt: "Finished concrete walkway" },
+  { src: pub("/concrete14.webp"), alt: "Concrete steps and edging" },
+  { src: pub("/trucks.webp"), alt: "Arechiga's Concrete crew and trucks" },
 ];
 
 const GallerySection = () => {
