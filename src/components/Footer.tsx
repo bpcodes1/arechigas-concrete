@@ -1,4 +1,5 @@
 import { Phone, Mail } from "lucide-react";
+import { pub } from "@/lib/publicUrl";
 
 const Footer = () => (
   <footer className="section-dark border-t border-primary-foreground/10 py-8 pb-24 md:pb-8">
@@ -8,7 +9,7 @@ const Footer = () => (
 
         {/* Brand */}
         <div className="flex items-start gap-4">
-          <img src="/logo.PNG" alt="Arechiga's Concrete" className="h-12 w-auto bg-white px-2 py-1 rounded flex-shrink-0" />
+          <img src={pub("/logo.PNG")} alt="Arechiga's Concrete" className="h-12 w-auto bg-white px-2 py-1 rounded flex-shrink-0" />
           <div>
             <p className="font-black text-primary-foreground text-base leading-tight">Arechiga's Concrete Construction LLC</p>
             <p className="text-xs text-primary-foreground/55 mt-1">Commercial &amp; Residential General Contractor</p>

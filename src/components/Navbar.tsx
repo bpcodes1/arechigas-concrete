@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import { pub } from "@/lib/publicUrl";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -15,7 +16,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 section-dark border-b border-primary/20">
       <div className="container mx-auto flex items-center justify-between py-2 px-4 lg:px-8">
         <a href="#">
-          <img src="/logo.PNG" alt="Arechiga's Concrete" className="h-12 w-auto bg-white px-2 py-1 rounded" />
+          <img src={pub("/logo.PNG")} alt="Arechiga's Concrete" className="h-12 w-auto bg-white px-2 py-1 rounded" />
         </a>
 
         {/* Desktop */}
