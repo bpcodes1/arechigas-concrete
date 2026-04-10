@@ -14,7 +14,7 @@ const ProcessSection = () => {
   const timeline = useScrollReveal(0.1);
 
   return (
-    <section id="process" className="py-20 md:py-28 bg-muted">
+    <section id="process" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div ref={header.ref} className={`text-center max-w-2xl mx-auto mb-16 scroll-hidden ${header.isVisible ? "scroll-visible" : ""}`}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-4">How It Works — From First Call to Final Cleanup</h2>

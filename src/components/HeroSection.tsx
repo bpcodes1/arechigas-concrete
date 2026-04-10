@@ -31,27 +31,27 @@ const HeroSection = () => {
   const cards = useScrollReveal(0.1);
 
   return (
-    <section className="relative bg-background min-h-screen lg:overflow-hidden">
+    <section className="relative bg-background min-h-screen md:overflow-hidden">
 
-      {/* ── MOBILE: full-width image, starts flush with top ── */}
-      <div aria-hidden="true" className="block lg:hidden relative">
+      {/* ── MOBILE only: full-width stacked image ── */}
+      <div aria-hidden="true" className="block md:hidden relative">
         <img
           src={heroImg}
           alt=""
-          className="w-full h-[58vh] object-cover object-center"
+          className="w-full h-[55vw] min-h-[240px] object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/20" />
       </div>
 
-      {/* ── DESKTOP: diagonal image panel ── */}
+      {/* ── TABLET + DESKTOP: diagonal image panel ── */}
       <div
         aria-hidden="true"
-        className="hidden lg:block absolute right-0 top-0 bottom-0 w-[62%] pointer-events-none select-none"
-        style={{ clipPath: "polygon(36% 0%, 100% 0%, 100% 100%, 6% 100%)" }}
+        className="hidden md:block absolute right-0 top-0 bottom-0 w-[60%] pointer-events-none select-none"
+        style={{ clipPath: "polygon(30% 0%, 100% 0%, 100% 100%, 4% 100%)" }}
       >
         <img src={heroImg} alt="" className="w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
       </div>
 
       {/* ── Text content ── */}
@@ -59,15 +59,15 @@ const HeroSection = () => {
         ref={content.ref}
         className={`relative z-10
           px-6 pt-6 pb-16
-          lg:px-8 lg:pl-16 xl:pl-24 lg:pt-20 lg:pb-48
-          lg:flex lg:items-center lg:min-h-screen
+          md:pl-10 md:pr-4 md:pt-28 md:pb-64 md:flex md:items-center md:min-h-screen
+          lg:pl-16 xl:pl-24 lg:pt-20 lg:pb-48
           scroll-hidden ${content.isVisible ? "scroll-visible" : ""}`}
       >
         <div className="max-w-[440px]">
           <p className={`text-muted-foreground text-xs font-semibold uppercase tracking-[0.2em] mb-3 scroll-hidden delay-1 ${content.isVisible ? "scroll-visible" : ""}`}>
             Custom Concrete · Salem, Oregon
           </p>
-          <h1 className="text-2xl sm:text-3xl lg:text-[1.85rem] xl:text-[2.1rem] font-black leading-[1.1] text-foreground mb-3">
+          <h1 className="text-2xl sm:text-3xl md:text-[1.75rem] lg:text-[1.85rem] xl:text-[2.1rem] font-black leading-[1.1] text-foreground mb-3">
             Your Driveway Should Look Like Something You Chose.
           </h1>
           <p className={`text-muted-foreground text-sm leading-relaxed mb-5 max-w-xs scroll-hidden delay-1 ${content.isVisible ? "scroll-visible" : ""}`}>
@@ -75,18 +75,18 @@ const HeroSection = () => {
             finishes for Salem homeowners. Noel personally quotes every job
             and runs every crew.
           </p>
-          <div className={`flex flex-row items-center gap-2 scroll-hidden delay-2 ${content.isVisible ? "scroll-visible" : ""}`}>
+          <div className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-2 scroll-hidden delay-2 ${content.isVisible ? "scroll-visible" : ""}`}>
             <a
               href="#contact"
-              className="px-4 py-2.5 lg:px-6 lg:py-3 bg-primary text-primary-foreground text-xs lg:text-sm font-bold uppercase tracking-wider hover:bg-primary/85 transition-all hover:scale-[1.02] active:scale-[0.98] inline-block whitespace-nowrap"
+              className="w-full sm:w-auto text-center px-5 py-3 bg-primary text-primary-foreground text-xs md:text-sm font-bold uppercase tracking-wider hover:bg-primary/85 transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
               Get a Free Quote
             </a>
             <a
               href="tel:9712393684"
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 lg:px-6 lg:py-3 border border-border text-foreground/55 text-xs lg:text-sm font-semibold hover:border-primary/30 hover:text-foreground transition-all whitespace-nowrap"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-3 border border-border text-foreground/55 text-xs md:text-sm font-semibold hover:border-primary/30 hover:text-foreground transition-all"
             >
-              <Phone className="w-3 h-3 lg:w-3.5 lg:h-3.5" />
+              <Phone className="w-3.5 h-3.5" />
               (971) 239-3684
             </a>
           </div>
@@ -94,16 +94,17 @@ const HeroSection = () => {
       </div>
 
       {/* ── Cards ──
-           Mobile : normal flow, 2×2 grid below the text
-           Desktop: absolutely positioned, floating above the bottom edge  */}
+           Mobile : normal flow below text, 2-col
+           Tablet+: absolutely pinned to bottom, 4-col  */}
       <div
         ref={cards.ref}
         className={`relative z-20
           px-4 pb-10
-          lg:absolute lg:bottom-16 lg:left-0 lg:right-0 lg:pb-0 lg:px-16 xl:px-24
+          md:absolute md:bottom-10 md:left-0 md:right-0 md:pb-0 md:px-10
+          lg:bottom-16 lg:px-16 xl:px-24
           scroll-hidden ${cards.isVisible ? "scroll-visible" : ""}`}
       >
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:max-w-5xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:max-w-4xl lg:max-w-5xl">
           {heroServices.map((s, i) => (
             <a
               key={s.num}

@@ -1,19 +1,20 @@
-import { Grid3X3, HardHat, Fence, Blocks, Droplets } from "lucide-react";
+import { Grid3X3, HardHat, Fence, Blocks, Droplets, Waves } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { pub } from "@/lib/publicUrl";
 
 const featuredService = {
-  label: "Premium",
-  headline: "Concrete That Looks Like It Was Designed — Because It Was.",
-  body: "Prestige concrete isn't just poured and finished — it's planned. Stamped patterns, custom textures, colored finishes, exposed aggregate. Noel does custom design work other Salem crews won't attempt. If you've seen a driveway or patio that made you stop and look twice, this is what you were looking at.",
-  image: pub("/concrete.webp"),
+  label: "Award Winning",
+  headline: "Quality That Gets Recognized — By Clients and the Industry.",
+  body: "Arechiga's Concrete has earned its reputation the hard way — job by job, review by review. With 86+ five-star ratings and recognition for craftsmanship in the Salem area, Noel's work speaks for itself. When the standard is your name on every project, cutting corners isn't an option.",
+  image: pub("/award.webp"),
 };
 
 const services = [
   { icon: Grid3X3, headline: "Exclusive Paver Designs. Not the Pattern Everyone Else Lays.", body: "Noel installs geo mesh beneath every paver project — a weed-blocking layer most crews skip. The result holds longer and keeps looking clean years after installation.", image: pub("/concrete2.webp") },
   { icon: HardHat, headline: "Functional Concrete Done with Craftsmanship.", body: "Driveways, slabs, RV pads, sidewalks, steps. Properly graded for runoff. Expansion joints placed right. Straight lines and a clean finish.", image: pub("/concrete3.webp") },
+  { icon: Waves, headline: "Pool Deck Resurfacing That Actually Holds Up.", body: "Worn, cracked, or stained pool decks get a full concrete makeover — resurfaced, sealed, and finished to last. Safe underfoot, clean to look at, and built for Oregon weather.", image: pub("/pool_before.webp"), afterImage: pub("/pool_after.webp") },
   { icon: Fence, headline: "Stay With One Contractor.", body: "Redoing the backyard? Noel does fencing too. Most clients find this out mid-project and save themselves from coordinating a second contractor.", image: pub("/concrete4.webp") },
-  { icon: Blocks, headline: "Retaining Walls and Block Work Built to Last.", body: "Retaining walls, block walls, brick, and stone features. Structural hardscape that holds up to Willamette Valley weather and soil conditions.", image: pub("/concrete5.webp") },
+  { icon: Blocks, headline: "Retaining Walls and Block Work Built to Last.", body: "Retaining walls, block walls, brick, and stone features. Structural hardscape that holds up to Willamette Valley weather and soil conditions.", image: pub("/retainer_wall2.jpg") },
   { icon: Droplets, headline: "Where the Water Goes Matters.", body: "Gutter installation, drain lines, and stormwater drainage planned alongside every driveway or patio project.", image: pub("/concrete6.webp") },
 ];
 
@@ -33,7 +34,7 @@ const ServicesSection = () => {
 
         <div ref={featured.ref} className={`rounded-xl overflow-hidden border border-border shadow-md mb-12 scroll-hidden ${featured.isVisible ? "scroll-visible" : ""}`}>
           <div className="grid md:grid-cols-2">
-            <img src={featuredService.image} alt="Prestige stamped concrete patio" className="w-full h-64 md:h-full object-cover" />
+            <img src={featuredService.image} alt="Arechiga's Concrete award recognition" className="w-full h-64 md:h-full object-cover" />
             <div className="p-8 md:p-12 flex flex-col justify-center">
               <span className="cta-lime text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full w-fit mb-4">{featuredService.label}</span>
               <h3 className="text-2xl md:text-3xl font-black text-foreground mb-4">{featuredService.headline}</h3>
@@ -45,7 +46,15 @@ const ServicesSection = () => {
         <div ref={grid.ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => (
             <div key={s.headline} className={`rounded-xl border border-border bg-card overflow-hidden shadow-sm hover:shadow-md hover:border-primary/30 transition-all group scroll-hidden delay-${Math.min(i + 1, 5)} ${grid.isVisible ? "scroll-visible" : ""}`}>
-              {s.image && <img src={s.image} alt={s.headline} className="w-full h-48 object-cover" />}
+              {s.afterImage ? (
+                <div className="relative w-full h-48 overflow-hidden">
+                  <img src={s.image} alt="Before" className="absolute inset-0 w-full h-full object-cover" />
+                  <img src={s.afterImage} alt="After" className="absolute inset-0 w-full h-full object-cover animate-before-after" />
+                  <span className="absolute bottom-2 left-2 text-[10px] font-bold uppercase tracking-wider bg-black/50 text-white px-2 py-0.5 rounded">Before / After</span>
+                </div>
+              ) : (
+                s.image && <img src={s.image} alt={s.headline} className="w-full h-48 object-cover" />
+              )}
               <div className="p-6">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <s.icon className="w-5 h-5 text-primary" />

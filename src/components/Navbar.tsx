@@ -19,8 +19,8 @@ const Navbar = () => {
           <img src={pub("/logo.PNG")} alt="Arechiga's Concrete" className="h-12 w-auto bg-white px-2 py-1 rounded" />
         </a>
 
-        {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop nav (lg+) */}
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navLinks.map((l) => (
             <a key={l.href} href={l.href} className="text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               {l.label}
@@ -34,15 +34,22 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile toggle */}
-        <button onClick={() => setOpen(!open)} className="md:hidden text-primary-foreground" aria-label="Toggle menu">
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Tablet CTA + hamburger (below lg) */}
+        <div className="flex lg:hidden items-center gap-3">
+          <a href="tel:9712393684" className="cta-lime px-4 py-2 rounded-md text-sm inline-flex items-center gap-1.5 transition-all">
+            <Phone className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">(971) 239-3684</span>
+            <span className="sm:hidden">Call</span>
+          </a>
+          <button onClick={() => setOpen(!open)} className="text-primary-foreground p-1" aria-label="Toggle menu">
+            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile/tablet menu */}
       {open && (
-        <div className="md:hidden section-dark border-t border-primary-foreground/10 pb-6 px-4">
+        <div className="lg:hidden section-dark border-t border-primary-foreground/10 pb-6 px-4">
           {navLinks.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="block py-3 text-sm font-semibold text-primary-foreground/80 hover:text-primary-foreground">
               {l.label}

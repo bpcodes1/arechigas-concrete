@@ -24,7 +24,7 @@ const TestimonialsSection = () => {
   const plugin = useRef(Autoplay({ delay: 4500, stopOnInteraction: true }));
 
   return (
-    <section id="testimonials" className="py-20 md:py-28 bg-background">
+    <section id="testimonials" className="py-20 md:py-28 bg-muted">
       <div className="container mx-auto px-4 lg:px-8">
 
         <div ref={header.ref} className={`text-center max-w-2xl mx-auto mb-16 scroll-hidden ${header.isVisible ? "scroll-visible" : ""}`}>

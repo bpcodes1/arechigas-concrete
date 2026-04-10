@@ -16,7 +16,7 @@ const FAQSection = () => {
   const content = useScrollReveal(0.1);
 
   return (
-    <section id="faq" className="py-20 md:py-28 bg-muted">
+    <section id="faq" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
         <div ref={header.ref} className={`text-center mb-16 scroll-hidden ${header.isVisible ? "scroll-visible" : ""}`}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-4">Questions Homeowners Ask Before They Call</h2>
