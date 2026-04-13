@@ -20,23 +20,32 @@ const galleryImages = [
   { src: pub("/trucks.webp"),      alt: "Arechiga's Concrete crew and trucks" },
 ];
 
-// Fixed heights (px) for every image except the last in each column.
-// The last image uses flex-grow so all three columns bottom-align.
-// 16 images split round-robin: col0 gets 6 imgs, col1 & col2 get 5 each.
+// Desktop (3 cols): col0=6 imgs, col1&col2=5 each
 const COL_HEIGHTS: number[][] = [
   [240, 180, 200, 160, 220],
   [160, 240, 180, 220],
   [200, 160, 240, 180],
 ];
 
+// Mobile (2 cols): 8 imgs each, last image flex-grows to align bottoms
+const COL_HEIGHTS_2: number[][] = [
+  [200, 160, 220, 180, 200, 160, 220],
+  [160, 220, 180, 200, 160, 220, 180],
+];
+
 const GallerySection = () => {
   const header = useScrollReveal();
   const gallery = useScrollReveal();
 
-  const columns = [
+  const columns3 = [
     galleryImages.filter((_, i) => i % 3 === 0),
     galleryImages.filter((_, i) => i % 3 === 1),
     galleryImages.filter((_, i) => i % 3 === 2),
+  ];
+
+  const columns2 = [
+    galleryImages.filter((_, i) => i % 2 === 0),
+    galleryImages.filter((_, i) => i % 2 === 1),
   ];
 
   return (
@@ -56,14 +65,23 @@ const GallerySection = () => {
           </p>
         </div>
 
-        {/* Mobile — CSS masonry (2 cols, natural image heights) */}
-        <div className="md:hidden columns-2 gap-4">
-          {galleryImages.map((img) => (
-            <div
-              key={img.src}
-              className="break-inside-avoid mb-4 overflow-hidden rounded-xl border border-border shadow-sm"
-            >
-              <img src={img.src} alt={img.alt} className="w-full object-cover" loading="lazy" />
+        {/* Mobile — 2 explicit columns, bottoms aligned */}
+        <div className="flex md:hidden gap-3 items-stretch">
+          {columns2.map((col, colIdx) => (
+            <div key={colIdx} className="flex-1 flex flex-col gap-3">
+              {col.map((img, rowIdx) => {
+                const isLast = rowIdx === col.length - 1;
+                const h = COL_HEIGHTS_2[colIdx]?.[rowIdx];
+                return (
+                  <div
+                    key={img.src}
+                    className={`overflow-hidden rounded-xl border border-border shadow-sm${isLast ? " flex-1 min-h-[140px]" : ""}`}
+                    style={!isLast && h ? { height: `${h}px` } : undefined}
+                  >
+                    <img src={img.src} alt={img.alt} className="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                );
+              })}
             </div>
           ))}
         </div>
@@ -73,7 +91,7 @@ const GallerySection = () => {
           ref={gallery.ref}
           className={`hidden md:flex gap-4 items-stretch scroll-hidden ${gallery.isVisible ? "scroll-visible" : ""}`}
         >
-          {columns.map((col, colIdx) => (
+          {columns3.map((col, colIdx) => (
             <div key={colIdx} className="flex-1 flex flex-col gap-4">
               {col.map((img, rowIdx) => {
                 const isLast = rowIdx === col.length - 1;

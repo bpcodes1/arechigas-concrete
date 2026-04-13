@@ -38,7 +38,7 @@ const HeroSection = () => {
         <img
           src={heroImg}
           alt=""
-          className="w-full h-[55vw] min-h-[240px] object-cover object-center"
+          className="w-full h-[75vw] min-h-[320px] object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/20" />
       </div>
