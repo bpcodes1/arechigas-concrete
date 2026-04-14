@@ -25,19 +25,19 @@ const ServicesSection = () => {
   const callout = useScrollReveal();
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-background">
+    <section id="services" className="py-10 md:py-14 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        <div ref={header.ref} className={`text-center max-w-2xl mx-auto mb-16 scroll-hidden ${header.isVisible ? "scroll-visible" : ""}`}>
+        <div ref={header.ref} className={`text-center max-w-2xl mx-auto mb-8 scroll-hidden ${header.isVisible ? "scroll-visible" : ""}`}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-4">One Crew. Every Job. Done Right.</h2>
           <p className="text-lg text-muted-foreground italic">Most clients come to us for concrete and leave wondering why they didn't call sooner about everything else.</p>
         </div>
 
-        <div ref={featured.ref} className={`rounded-xl overflow-hidden border border-border shadow-md mb-12 scroll-hidden ${featured.isVisible ? "scroll-visible" : ""}`}>
+        <div ref={featured.ref} className={`rounded-xl overflow-hidden border border-border shadow-md mb-8 scroll-hidden ${featured.isVisible ? "scroll-visible" : ""}`}>
           <div className="grid md:grid-cols-2">
-            <img src={featuredService.image} alt="Arechiga's Concrete award recognition" className="w-full h-64 md:h-full object-cover" />
-            <div className="p-8 md:p-12 flex flex-col justify-center">
-              <span className="cta-lime text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full w-fit mb-4">{featuredService.label}</span>
-              <h3 className="text-2xl md:text-3xl font-black text-foreground mb-4">{featuredService.headline}</h3>
+            <img src={featuredService.image} alt="Arechiga's Concrete award recognition" className="w-full h-48 md:h-full object-cover" />
+            <div className="p-6 md:p-8 flex flex-col justify-center">
+              <span className="cta-lime text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full w-fit mb-3">{featuredService.label}</span>
+              <h3 className="text-xl md:text-2xl font-black text-foreground mb-3">{featuredService.headline}</h3>
               <p className="text-muted-foreground leading-relaxed italic">{featuredService.body}</p>
             </div>
           </div>
