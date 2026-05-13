@@ -6,7 +6,7 @@ const featuredService = {
   label: "Award Winning",
   headline: "Quality That Gets Recognized — By Clients and the Industry.",
   body: "Arechiga's Concrete has earned its reputation the hard way — job by job, review by review. With 86+ five-star ratings and recognition for craftsmanship in the Salem area, Noel's work speaks for itself. When the standard is your name on every project, cutting corners isn't an option.",
-  image: pub("/award.webp"),
+  image: pub("/award.png"),
 };
 
 const services = [
@@ -34,8 +34,8 @@ const ServicesSection = () => {
 
         <div ref={featured.ref} className={`rounded-xl overflow-hidden border border-border shadow-md mb-12 scroll-hidden ${featured.isVisible ? "scroll-visible" : ""}`}>
           <div className="grid md:grid-cols-[1fr_2fr]">
-            <div className="flex items-center justify-center bg-muted/40 p-6">
-              <img src={featuredService.image} alt="Arechiga's Concrete award recognition" className="w-full object-contain" />
+            <div className="flex items-center justify-center bg-muted/40">
+              <img src={featuredService.image} alt="Arechiga's Concrete award recognition" className="w-full h-full object-contain" />
             </div>
             <div className="p-6 md:p-8 flex flex-col justify-center">
               <span className="cta-lime text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full w-fit mb-3">{featuredService.label}</span>

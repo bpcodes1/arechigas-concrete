@@ -93,6 +93,32 @@
     box-shadow: var(--cta-glow);
   }
 
+  .cta-google {
+    background-color: #84cc16;
+    color: #1a0505;
+    @apply font-bold;
+  }
+
+  .cta-google:hover {
+    background-color: #78b514;
+    box-shadow: 0 0 32px rgba(132, 204, 22, 0.65);
+  }
+
+  @keyframes google-glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 8px 2px rgba(132, 204, 22, 0.35);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 22px 8px rgba(132, 204, 22, 0.55);
+      transform: scale(1.025);
+    }
+  }
+
+  .google-glow-pulse {
+    animation: google-glow-pulse 2.5s ease-in-out infinite;
+  }
+
   .scroll-hidden {
     opacity: 0;
     transform: translateY(32px);
