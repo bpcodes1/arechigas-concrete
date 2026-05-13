@@ -6,7 +6,7 @@ const featuredService = {
   label: "Award Winning",
   headline: "Quality That Gets Recognized — By Clients and the Industry.",
   body: "Arechiga's Concrete has earned its reputation the hard way — job by job, review by review. With 86+ five-star ratings and recognition for craftsmanship in the Salem area, Noel's work speaks for itself. When the standard is your name on every project, cutting corners isn't an option.",
-  image: pub("/award.png"),
+  image: pub("/award.webp"),
 };
 
 const services = [
